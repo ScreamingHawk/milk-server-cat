@@ -1,0 +1,70 @@
+<!doctype html>
+<!--[if lt IE 7]>	  <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>		 <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>		 <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Cat Facts</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	</head>
+	<body class="dark">
+		<!--[if lt IE 8]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div id="wrap">
+			<div class="container-fluid" style="margin-bottom: 50px;">
+				<div class="hidden-xs" style="margin-top: 50px"></div>
+				<div class="visible-xs" style="margin-top: 10px"></div>
+				<div class="row">
+					<div class="col-lg-4 col-sm-3 col-xs-hidden"></div>
+					<div class="col-lg-4 col-sm-6 col-xs-12 text-center">
+						<h1>Cat Facts</h1>
+						<h3>Get spam about cats :3</h3>
+						<form id="catForm" class="form-horizontal">
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="email">Email</label>
+								<div class="col-sm-10">
+									<input id="email" class="form-control" required="true" placeholder="ilovecats@myhouse.com">
+								</div>
+							</div>
+							<button id="catButton" class="btn btn-primary">Yay Cats!</button>
+						</form>
+						<p id="note" class="hidden"></p>
+					</div>
+					<div class="col-lg-4 col-sm-3 col-xs-hidden"></div>
+				</div>
+			</div>
+		</div>
+		
+		<footer id="footer">
+			<div class="container">
+				<div class="col-xs-8">
+					<p>&copy; Michael Standen <script>document.write(new Date().getFullYear());</script></p>
+				</div>
+				<div class="col-xs-4">
+					<p class="text-right">
+						<a href="https://www.changetip.com/tipme/michaelstanden"><i class="fa fa-btc"></i> Bitcoin</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/g-analytics.js"></script>
+		
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.2.19.min.js"></script>
+		<script src="js/cat.js"></script>
+	</body>
+</html>
