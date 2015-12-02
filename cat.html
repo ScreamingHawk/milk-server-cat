@@ -29,11 +29,12 @@
 					<div class="col-lg-4 col-sm-3 col-xs-hidden"></div>
 					<div class="col-lg-4 col-sm-6 col-xs-12 text-center">
 						<h1>MEOW</h1>
-						<a href="http://thecatapi.com">
+						<h3>Scroll to the bottom to load more cats!</h3>
+						<p>Cat images courtesy of <a href="http://thecatapi.com">The Cat API</a>. </p>
+						<div id="catbox">
 							<img src="http://thecatapi.com/api/images/get?format=src&type=gif" class="img-responsive" style="margin: 0 auto;"></img>
-						</a>
-						<p style="margin-top: 10px;"><a href="">Refresh the page</a> for a new image!<p>
-						<p>Cat image courtesy of <a href="http://thecatapi.com">The Cat API</a>. </p>
+						</div>
+						<button id="loadCatButton" class="btn btn-primary" style="margin-top: 5px;">Load Cat</button>
 					</div>
 					<div class="col-lg-4 col-sm-3 col-xs-hidden"></div>
 				</div>
@@ -61,5 +62,19 @@
 		<script src="js/main.js"></script>
 		
 		<script src="js/g-analytics.js"></script>
+		
+		<script>
+			$(window).scroll(function(){
+				if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+					loadCat();
+				}
+			});
+			
+			$('#loadCatButton').click(loadCat);
+			
+			function loadCat(){
+				$('#catbox').append('<img src="http://thecatapi.com/api/images/get?format=src&type=gif&cache_stop='+Math.random()+'" class="img-responsive" style="margin: 0 auto;"></img>');
+			}
+		</script>
 	</body>
 </html>
