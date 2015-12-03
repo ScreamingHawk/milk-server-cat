@@ -32,7 +32,10 @@
 						<h3>Scroll to the bottom to load more cats!</h3>
 						<p>Cat images courtesy of <a href="http://thecatapi.com">The Cat API</a>. </p>
 						<div id="catbox">
-							<img src="http://thecatapi.com/api/images/get?format=src&type=gif" class="img-responsive" style="margin: 0 auto;"></img>
+							<img src="http://thecatapi.com/api/images/get?format=src&type=gif&cache_stop=1" class="img-responsive" style="margin: 0 auto;"></img>
+							<img src="http://thecatapi.com/api/images/get?format=src&type=gif&cache_stop=2s" class="img-responsive" style="margin: 0 auto;"></img>
+							<img src="http://thecatapi.com/api/images/get?format=src&type=gif&cache_stop=3" class="img-responsive" style="margin: 0 auto;"></img>
+							<img src="http://thecatapi.com/api/images/get?format=src&type=gif&cache_stop=4" class="img-responsive" style="margin: 0 auto;"></img>
 						</div>
 						<button id="loadCatButton" class="btn btn-primary" style="margin-top: 50px;">Load Cat</button>
 					</div>
@@ -65,7 +68,7 @@
 		
 		<script>
 			$(window).scroll(function(){
-				if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+				if ($(window).scrollTop() + ($(window).height()*2) >= $(document).height()) {
 					loadCat();
 				}
 			});
