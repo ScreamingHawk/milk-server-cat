@@ -8,7 +8,7 @@ exports.handler = function(event, context) {
         if(err){
             context.fail(err);
         }
-        var lines = data.Body.toString().split('\n');
+        var lines = data.Body.toString().split('\r\n');
         var fact = lines[Math.floor(Math.random()*lines.length)] + "! :3";
         console.log(fact);
         
