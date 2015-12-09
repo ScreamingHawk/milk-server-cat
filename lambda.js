@@ -9,15 +9,25 @@ exports.handler = function(event, context) {
             context.fail(err);
         }
         var lines = data.Body.toString().split('\r\n');
-        var fact = lines[Math.floor(Math.random()*lines.length)] + "! :3";
+        var i = Math.floor(Math.random()*lines.length);
+        var fact = lines.splice(i, 1) + "! :3";
         console.log(fact);
         
-        var sns = new AWS.SNS();
-        params = {
-            Message: fact,
-            Subject: "Cat Facts",
-            TopicArn: "arn:aws:sns:us-east-1:110820207274:CatFacts"
-        };
-        sns.publish(params, context.done);
+        s3.putObject({
+			Bucket: 'cat-assets',
+			Key: 'catfacts.txt',
+			Body: lines.join('\r\n')
+		}, function(err){
+		    if (err){
+		        context.fail(err);
+		    }
+            var sns = new AWS.SNS();
+            params = {
+                Message: fact,
+                Subject: "Cat Facts",
+                TopicArn: "arn:aws:sns:us-east-1:110820207274:CatFacts"
+            };
+            sns.publish(params, context.done);
+    	});
     });
 };
