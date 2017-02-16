@@ -1,4 +1,4 @@
-# milk-server-cat
+# Cat Related Content
 
 A bunch of cat related services
 
